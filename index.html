@@ -3,492 +3,84 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#08070b" />
-  <meta name="description" content="Bijou Nicole — official website. Explore the OTHERSELF era, music archive, story and tour." />
+  <meta name="theme-color" content="#140d0a" />
+  <meta name="description" content="Bijou Nicole — OTHERSELF EP. Official website with countdown and streaming links." />
   <meta property="og:title" content="Bijou Nicole — OTHERSELF" />
-  <meta property="og:description" content="Enter the OTHERSELF era. Music, archive, visuals and tour." />
-  <title>Bijou Nicole // OTHERSELF</title>
+  <meta property="og:description" content="Enter the OTHERSELF era and count down to the EP." />
+  <title>Bijou Nicole — OTHERSELF</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --black:#07070a;
-      --ink:#0c0a11;
-      --panel:#15111b;
-      --panel-2:#21182b;
-      --silver:#e9e7ef;
-      --chrome1:#ffffff;
-      --chrome2:#aaa7b8;
-      --chrome3:#4e4a59;
-      --lilac:#c9b6ff;
-      --lav:#9177d5;
-      --pink:#f1b5db;
-      --ice:#d9f1ff;
-      --text:#faf8ff;
-      --muted:#b5aebe;
-      --line:rgba(255,255,255,.16);
-      --max:1180px;
-      --shadow:0 20px 70px rgba(0,0,0,.48);
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      color:var(--text);
-      font-family:"DM Sans",Arial,sans-serif;
-      background:
-        radial-gradient(circle at 12% 12%,rgba(145,119,213,.22),transparent 26%),
-        radial-gradient(circle at 88% 18%,rgba(241,181,219,.14),transparent 28%),
-        radial-gradient(circle at 48% 68%,rgba(93,66,128,.16),transparent 36%),
-        linear-gradient(180deg,#050507 0%,#0b0810 48%,#050507 100%);
-      overflow-x:hidden;
-    }
-
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:999;
-      pointer-events:none;
-      opacity:.32;
-      background-image:
-        radial-gradient(circle at 15% 22%,rgba(255,255,255,.48) 0 1px,transparent 1.6px),
-        radial-gradient(circle at 75% 12%,rgba(255,255,255,.4) 0 1px,transparent 1.7px),
-        radial-gradient(circle at 44% 70%,rgba(255,255,255,.32) 0 1px,transparent 1.5px);
-      background-size:120px 120px,170px 170px,210px 210px;
-      mix-blend-mode:screen;
-    }
-
-    a{color:inherit;text-decoration:none}
-    button{font:inherit}
-    .wrap{width:min(var(--max),calc(100% - 36px));margin:0 auto}
-    .skip{position:absolute;left:-9999px;top:auto}.skip:focus{left:18px;top:18px;z-index:9999;background:#fff;color:#000;padding:10px 14px;border-radius:8px}
-
-    .utility{
-      height:27px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-      border-bottom:1px solid rgba(255,255,255,.16);
-      background:linear-gradient(180deg,#35303e,#111017 52%,#060609 53%);
-      color:#ddd9e9;
-      font:700 10px/1 Verdana,Arial,sans-serif;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      white-space:nowrap;
-    }
-    .utility-track{display:inline-block;min-width:max-content;animation:marquee 24s linear infinite}
-    @keyframes marquee{to{transform:translateX(-50%)}}
-
-    .nav{
-      position:sticky;
-      top:0;
-      z-index:100;
-      border-bottom:1px solid #4f4857;
-      background:linear-gradient(180deg,rgba(45,39,52,.96),rgba(12,10,16,.96) 55%,rgba(4,4,7,.96));
-      box-shadow:0 7px 30px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.18);
-      backdrop-filter:blur(16px);
-    }
-    .nav-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand{font-family:"Italiana",serif;font-size:1.35rem;letter-spacing:.12em;text-transform:uppercase;text-shadow:0 0 18px rgba(201,182,255,.28)}
-    .nav-links{display:flex;align-items:center;gap:8px}
-    .nav-links a,.menu-btn{
-      border:1px solid #554e5e;
-      border-radius:4px;
-      padding:9px 13px;
-      color:#eeeaf6;
-      background:linear-gradient(180deg,#342d3d,#17131d 52%,#0a090d 53%);
-      box-shadow:inset 0 1px rgba(255,255,255,.16),0 4px 8px rgba(0,0,0,.25);
-      font:700 .68rem/1 Verdana,Arial,sans-serif;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      transition:.18s ease;
-    }
-    .nav-links a:hover,.nav-links a:focus-visible,.menu-btn:hover{transform:translateY(-1px);border-color:#a08fc0;background:linear-gradient(180deg,#544966,#241b31 52%,#0a090d 53%)}
-    .menu-btn{display:none;color:white;cursor:pointer}
-
-    .hero{padding:48px 0 34px;position:relative;min-height:calc(100svh - 95px);display:grid;align-items:center;overflow:hidden}
-    .hero::after{
-      content:"";
-      position:absolute;
-      width:620px;height:620px;border-radius:50%;right:-240px;top:-170px;
-      background:radial-gradient(circle,rgba(201,182,255,.22),rgba(241,181,219,.07) 34%,transparent 68%);
-      filter:blur(2px);
-      pointer-events:none;
-    }
-    .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:42px;align-items:center}
-    .mini-label{font:700 10px/1 Verdana,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin-bottom:14px}
-    .chrome-title{
-      margin:0;
-      font-family:"Italiana",Georgia,serif;
-      font-weight:400;
-      font-size:clamp(4rem,10.5vw,9.7rem);
-      line-height:.78;
-      letter-spacing:-.045em;
-      text-transform:uppercase;
-      background:linear-gradient(180deg,#fff 0%,#fff 12%,#aca9b8 31%,#4b4754 48%,#fbfbff 58%,#8c8796 72%,#f4f3f9 100%);
-      -webkit-background-clip:text;background-clip:text;color:transparent;
-      -webkit-text-stroke:1px rgba(255,255,255,.12);
-      filter:drop-shadow(0 4px 0 #17141b) drop-shadow(0 0 18px rgba(213,196,255,.18));
-    }
-    .chrome-title span{display:block;font-size:.63em;letter-spacing:.02em;margin-left:.28em}
-    .hero-copy{max-width:640px;margin:24px 0 0;color:#c8c0cd;line-height:1.8;font-size:.98rem}
-    .hero-copy strong{color:white}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-    .y2k-btn{
-      min-height:44px;padding:0 18px;border:1px solid #71657e;border-radius:4px;
-      display:inline-flex;align-items:center;justify-content:center;
-      background:linear-gradient(180deg,#817293 0%,#34243f 42%,#160f1d 48%,#08070b 100%);
-      box-shadow:inset 0 1px rgba(255,255,255,.35),0 7px 18px rgba(0,0,0,.32);
-      font:700 .72rem/1 Verdana,Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#fff;
-      transition:.18s ease;
-    }
-    .y2k-btn.alt{background:linear-gradient(180deg,#f7f6fc,#a7a2b2 45%,#514d58 48%,#17151c);color:#fff}
-    .y2k-btn:hover,.y2k-btn:focus-visible{transform:translateY(-2px);filter:brightness(1.12)}
-
-    .desktop-card{
-      border:1px solid #70687b;border-radius:8px;padding:8px;
-      background:linear-gradient(145deg,#3b3444,#110e16 28%,#08070a 72%,#40364a);
-      box-shadow:var(--shadow),inset 0 1px rgba(255,255,255,.22);
-    }
-    .window-bar{
-      min-height:30px;border:1px solid #776f82;border-radius:4px 4px 0 0;padding:0 9px;
-      display:flex;align-items:center;justify-content:space-between;gap:10px;
-      background:linear-gradient(180deg,#75697f,#2b2431 52%,#121017 53%);
-      font:700 10px/1 Verdana,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;
-      box-shadow:inset 0 1px rgba(255,255,255,.22);
-    }
-    .win-controls{display:flex;gap:5px}.win-controls i{display:block;width:12px;height:12px;border:1px solid #aaa1b2;background:linear-gradient(#ddd,#555)}
-    .window-body{border:1px solid #46404b;border-top:0;background:linear-gradient(155deg,#16111d,#08070a 66%);padding:18px}
-    .disc-wrap{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:center}
-    .disc{
-      width:150px;aspect-ratio:1;border-radius:50%;position:relative;
-      background:
-        radial-gradient(circle,#08080a 0 8%,#bbb7c6 8.5% 10%,transparent 10.5%),
-        conic-gradient(from 35deg,#f1d6ff,#9ee3ff,#fff4b7,#e2b5ff,#a5f3e0,#f8bddd,#f1d6ff);
-      box-shadow:0 0 28px rgba(201,182,255,.22),inset 0 0 0 1px rgba(255,255,255,.65),inset 0 0 25px rgba(255,255,255,.35);
-    }
-    .disc::after{content:"OTHERSELF";position:absolute;inset:0;display:grid;place-items:end center;padding-bottom:26px;font:700 9px/1 Verdana,Arial,sans-serif;letter-spacing:.16em;color:#0a0710;text-shadow:0 1px rgba(255,255,255,.7)}
-    .player-title{font:700 11px/1.4 Verdana,Arial,sans-serif;color:#fff;text-transform:uppercase;letter-spacing:.08em}
-    .player-sub{color:#9e94a7;font-size:.75rem;margin-top:5px}
-    .meter{height:8px;margin:14px 0 10px;border:1px solid #4b4551;background:#030305;box-shadow:inset 0 1px 4px #000;overflow:hidden}
-    .meter span{display:block;height:100%;width:68%;background:repeating-linear-gradient(90deg,#d8c3ff 0 6px,#785ea8 6px 9px);animation:pulsebar 2.4s ease-in-out infinite alternate}
-    @keyframes pulsebar{to{width:88%}}
-    .player-meta{display:flex;justify-content:space-between;color:#968c9f;font:700 9px/1 Verdana,Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em}
-    .launch{margin-top:14px;display:inline-flex;width:100%;justify-content:center}
-
-    .ticker{border-block:1px solid #665f70;background:linear-gradient(180deg,#2b2630,#0b0a0e 55%,#030304);overflow:hidden;box-shadow:inset 0 1px rgba(255,255,255,.15)}
-    .ticker-track{display:flex;width:max-content;animation:marquee2 26s linear infinite}
-    .ticker-track span{padding:12px 26px;font:700 11px/1 Verdana,Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;color:#d5c7e7}
-    @keyframes marquee2{to{transform:translateX(-50%)}}
-
-    section{padding:92px 0;position:relative}
-    .section-top{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:30px}
-    .section-top h2{font-family:"Italiana",Georgia,serif;font-weight:400;font-size:clamp(3rem,7vw,6rem);line-height:.86;margin:8px 0 0}
-    .section-top p{max-width:560px;color:var(--muted);line-height:1.75;margin:0}
-    .tiny{font:700 10px/1 Verdana,Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--pink)}
-
-    .current-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px}
-    .feature-window,.info-window,.archive-window,.tour-window,.visual-window,.contact-window{border:1px solid #696171;border-radius:7px;padding:7px;background:linear-gradient(145deg,#302937,#0c0a10 38%,#07070a);box-shadow:var(--shadow),inset 0 1px rgba(255,255,255,.17)}
-    .feature-body{min-height:460px;border:1px solid #45404a;border-top:0;padding:34px;position:relative;overflow:hidden;background:radial-gradient(circle at 77% 28%,rgba(229,194,255,.2),transparent 22%),radial-gradient(circle at 18% 76%,rgba(129,225,255,.1),transparent 26%),linear-gradient(145deg,#18111e,#08070a 62%)}
-    .feature-body::after{content:"OTHERSELF";position:absolute;right:-.03em;bottom:-.12em;font-family:"Italiana",serif;font-size:clamp(4rem,11vw,9rem);color:rgba(255,255,255,.035);white-space:nowrap}
-    .feature-body h3{font-family:"Italiana",serif;font-size:clamp(3rem,7vw,6.3rem);font-weight:400;margin:9px 0 18px;line-height:.88;position:relative;z-index:1}
-    .feature-body p{max-width:590px;color:#c8becd;line-height:1.8;position:relative;z-index:1}
-    .release-date{display:inline-block;margin-top:20px;padding:7px 10px;border:1px solid #80738c;background:#110d17;font:700 10px/1 Verdana,Arial,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:#f5d7eb;position:relative;z-index:1}
-    .info-body{border:1px solid #45404a;border-top:0;background:#09080c;padding:18px;display:grid;gap:12px;min-height:460px;align-content:start}
-    .stat{border:1px solid #49434e;background:linear-gradient(180deg,#201b25,#0b090d);padding:14px;box-shadow:inset 0 1px rgba(255,255,255,.08)}
-    .stat b{display:block;color:#fff;font:700 10px/1 Verdana,Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;margin-bottom:7px}
-    .stat span{color:#aaa0b1;font-size:.86rem;line-height:1.55}
-    .sparkline{height:52px;display:flex;align-items:end;gap:4px;margin-top:6px}
-    .sparkline i{display:block;flex:1;min-width:5px;background:linear-gradient(#f0cff0,#7960a8);border:1px solid rgba(255,255,255,.18)}
-    .sparkline i:nth-child(1){height:22%}.sparkline i:nth-child(2){height:34%}.sparkline i:nth-child(3){height:50%}.sparkline i:nth-child(4){height:42%}.sparkline i:nth-child(5){height:70%}.sparkline i:nth-child(6){height:60%}.sparkline i:nth-child(7){height:88%}.sparkline i:nth-child(8){height:76%}.sparkline i:nth-child(9){height:96%}
-
-    .archive-shell{display:grid;grid-template-columns:180px 1fr;border:1px solid #45404a;border-top:0;background:#09080c;min-height:560px}
-    .archive-tabs{border-right:1px solid #49434f;background:linear-gradient(180deg,#19151e,#0a090d);padding:13px;display:flex;flex-direction:column;gap:6px}
-    .archive-tabs button{border:1px solid #49434f;border-radius:2px;background:linear-gradient(#302937,#151118);color:#d7cfdd;text-align:left;padding:10px;cursor:pointer;font:700 10px/1.2 Verdana,Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em}
-    .archive-tabs button.active,.archive-tabs button:hover{background:linear-gradient(#756987,#32233d);border-color:#9382a2;color:#fff}
-    .archive-content{padding:22px}
-    .archive-year{font:700 10px/1 Verdana,Arial,sans-serif;color:var(--pink);letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px}
-    .era-list{display:grid;gap:10px}
-    .era-item{border:1px solid #3e3943;background:linear-gradient(180deg,#17131b,#0a090c);padding:15px;display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;transition:.18s}
-    .era-item:hover{border-color:#786b87;transform:translateX(3px)}
-    .era-num{width:38px;height:38px;display:grid;place-items:center;border:1px solid #6c6375;background:linear-gradient(#676071,#1c1821);font:700 10px/1 Verdana,Arial,sans-serif;color:#fff}
-    .era-item h3{font-family:"Italiana",serif;font-size:1.55rem;font-weight:400;margin:0 0 4px}.era-item p{margin:0;color:#9e95a5;line-height:1.55;font-size:.85rem}
-    .era-item.current{border-color:#9b83ac;background:linear-gradient(115deg,rgba(147,119,213,.22),rgba(15,11,20,.92))}
-
-    .visual-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;border:1px solid #45404a;border-top:0;background:#09080c;padding:18px}
-    .visual-card{min-height:260px;border:1px solid #56505b;position:relative;overflow:hidden;background:radial-gradient(circle at 34% 22%,rgba(255,255,255,.16),transparent 16%),linear-gradient(145deg,#35293f,#110d16 50%,#050507);display:flex;flex-direction:column;justify-content:end;padding:17px}
-    .visual-card:nth-child(2){background:radial-gradient(circle at 70% 30%,rgba(204,229,255,.15),transparent 16%),linear-gradient(145deg,#141d2a,#221426 56%,#060608)}
-    .visual-card:nth-child(3){background:radial-gradient(circle at 40% 22%,rgba(255,220,241,.15),transparent 16%),linear-gradient(145deg,#36242e,#171017 55%,#060608)}
-    .visual-card::before{content:"✦";position:absolute;right:14px;top:10px;color:rgba(255,255,255,.35);font-size:1.6rem}
-    .visual-card b{font:700 10px/1 Verdana,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#fff}.visual-card span{color:#aaa1b0;font-size:.82rem;margin-top:6px}
-
-    .profile-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:16px;border:1px solid #45404a;border-top:0;background:#09080c;padding:18px}
-    .avatar{min-height:430px;border:1px solid #504957;background:radial-gradient(circle at 50% 28%,rgba(241,181,219,.2),transparent 17%),linear-gradient(170deg,#2b2033,#0a080d 72%);position:relative;display:grid;place-items:center;overflow:hidden}
-    .avatar::after{content:"BIJOU";position:absolute;bottom:-.12em;left:-.04em;font-family:"Italiana",serif;font-size:clamp(5rem,11vw,9rem);color:rgba(255,255,255,.05)}
-    .avatar span{font:700 10px/1 Verdana,Arial,sans-serif;text-transform:uppercase;letter-spacing:.18em;color:#8f8597}
-    .profile{padding:14px 12px 14px 8px}.profile h3{font-family:"Italiana",serif;font-weight:400;font-size:clamp(2.6rem,5vw,4.5rem);line-height:.92;margin:9px 0 18px}.profile p{color:#b8aebd;line-height:1.85}
-    .profile-table{margin-top:20px;border:1px solid #45404a}.row{display:grid;grid-template-columns:120px 1fr;border-bottom:1px solid #45404a}.row:last-child{border-bottom:0}.row b,.row span{padding:10px 12px;font-size:.78rem}.row b{background:#19151d;font:700 9px/1.3 Verdana,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#d9d0e0}.row span{color:#a99faf}
-
-    .tour-body{border:1px solid #45404a;border-top:0;background:#09080c}
-    .tour-row{display:grid;grid-template-columns:130px 1fr 1fr auto;gap:16px;padding:15px 16px;border-bottom:1px solid #37323b;align-items:center}
-    .tour-row:last-child{border-bottom:0}.tour-row time{font:700 10px/1 Verdana,Arial,sans-serif;color:var(--pink);letter-spacing:.08em;text-transform:uppercase}.tour-row strong{font-family:"Italiana",serif;font-weight:400;font-size:1.28rem}.tour-row span{color:#a79eae;font-size:.84rem}.tour-row em{font-style:normal;border:1px solid #5f5668;background:#17121d;padding:7px 9px;font:700 9px/1 Verdana,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#d9cce6}
-
-    .contact-body{border:1px solid #45404a;border-top:0;background:radial-gradient(circle at 50% 0,rgba(147,119,213,.15),transparent 40%),#09080c;padding:50px 24px;text-align:center}.contact-body h2{font-family:"Italiana",serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:400;line-height:.9;margin:8px auto 18px;max-width:800px}.contact-body p{max-width:620px;margin:0 auto;color:#aaa1b0;line-height:1.75}
-
-    footer{border-top:1px solid #4e4854;background:#050507;padding:24px 0 32px;color:#8e8495}.footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}.footer-grid span{font:700 9px/1.5 Verdana,Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase}.footer-links{display:flex;gap:14px;flex-wrap:wrap}.footer-links a:hover{color:white}
-    .counter{display:inline-block;border:1px inset #6a6570;background:#000;color:#bfffbf;padding:3px 6px;font:700 10px/1 "Courier New",monospace;letter-spacing:.08em}
-
-    .spark{position:fixed;width:4px;height:4px;border-radius:50%;background:white;box-shadow:0 0 8px #d5bfff;pointer-events:none;z-index:998;animation:fadeSpark .7s linear forwards}
-    @keyframes fadeSpark{to{opacity:0;transform:translateY(8px) scale(.2)}}
-
-    @media(max-width:900px){
-      .hero-grid,.current-grid,.profile-grid{grid-template-columns:1fr}.disc-wrap{grid-template-columns:125px 1fr}.disc{width:125px}.visual-grid{grid-template-columns:1fr 1fr}.archive-shell{grid-template-columns:1fr}.archive-tabs{border-right:0;border-bottom:1px solid #49434f;display:grid;grid-template-columns:repeat(3,1fr)}.tour-row{grid-template-columns:100px 1fr auto}.tour-row span{grid-column:2/4}.section-top{align-items:start;flex-direction:column}}
-    @media(max-width:700px){
-      .menu-btn{display:block}.nav-links{display:none;position:absolute;top:68px;left:18px;right:18px;flex-direction:column;align-items:stretch;padding:10px;background:#09080c;border:1px solid #5b5362}.nav-links.open{display:flex}.nav-links a{text-align:center}.chrome-title{font-size:clamp(3.5rem,20vw,6.5rem)}.hero{padding-top:32px}.visual-grid{grid-template-columns:1fr}.tour-row{grid-template-columns:1fr auto}.tour-row time,.tour-row span{grid-column:1/-1}.archive-tabs{grid-template-columns:1fr 1fr}.profile-grid{padding:10px}.avatar{min-height:330px}.section-top p{font-size:.92rem}.utility{justify-content:flex-start}.disc-wrap{grid-template-columns:1fr;text-align:center}.disc{margin:auto}.player-meta{text-align:left}.window-body{padding:14px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.utility-track,.ticker-track,.meter span{animation:none}.spark{display:none}}
+    :root{--bg:#0f0907;--bg2:#1b110e;--panel:#1c120f;--line:rgba(214,173,109,.28);--line-soft:rgba(214,173,109,.14);--gold:#e0b16d;--gold-2:#f1d0a0;--text:#f7ede1;--muted:#d5bca1;--shadow:0 24px 70px rgba(0,0,0,.45);--max:1180px}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;color:var(--text);font-family:"DM Sans",system-ui,sans-serif;background:radial-gradient(circle at 15% 16%,rgba(224,177,109,.14),transparent 27%),radial-gradient(circle at 88% 14%,rgba(255,212,146,.12),transparent 24%),linear-gradient(180deg,#120b09 0%,#0c0705 100%);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;mix-blend-mode:soft-light}
+    a{color:inherit;text-decoration:none} img{max-width:100%;display:block}.wrap{width:min(var(--max),calc(100% - 34px));margin:0 auto;position:relative;z-index:1}
+    .topbar{border-bottom:1px solid var(--line-soft);background:linear-gradient(180deg,rgba(57,35,27,.9),rgba(19,11,8,.96));color:var(--gold-2);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase}.topbar-inner{min-height:36px;display:flex;align-items:center;justify-content:center;text-align:center}
+    .nav{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);backdrop-filter:blur(14px);background:rgba(14,9,7,.85)}.nav-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-family:"Cinzel",serif;font-size:1.1rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-2)}.nav-links{display:flex;gap:10px;flex-wrap:wrap}.nav-links a{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:linear-gradient(180deg,rgba(255,215,160,.07),rgba(56,32,23,.25));color:#f8ecdd;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;transition:.2s ease}.nav-links a:hover{transform:translateY(-1px);border-color:rgba(241,208,160,.58)}
+    .hero{padding:48px 0 88px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;inset:auto -120px -160px auto;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(224,177,109,.18),transparent 66%);filter:blur(10px)}.hero-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:34px;align-items:center}
+    .cover-frame{padding:14px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(70,44,31,.85),rgba(18,10,8,.96));box-shadow:var(--shadow),inset 0 1px rgba(255,255,255,.08);border-radius:28px}.cover-frame img{border-radius:18px;aspect-ratio:1/1;object-fit:cover;box-shadow:0 16px 36px rgba(0,0,0,.4)}
+    .eyebrow{color:var(--gold-2);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px} h1,h2,h3{font-family:"Cinzel",serif;font-weight:500;margin:0} h1{font-size:clamp(3rem,7vw,6.6rem);line-height:.92;letter-spacing:.02em;color:var(--gold-2)}.subhead{font-size:clamp(1rem,2.2vw,1.25rem);color:var(--muted);line-height:1.8;max-width:640px;margin-top:18px}.hero-card{border:1px solid var(--line);border-radius:30px;padding:clamp(24px,4vw,38px);background:linear-gradient(180deg,rgba(48,29,22,.72),rgba(19,12,9,.9));box-shadow:var(--shadow)}
+    .stream-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}.stream-links a{min-height:46px;padding:0 18px;border-radius:999px;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#6d471e 0%,#2a170f 100%);color:#fff;font-size:.78rem;letter-spacing:.11em;text-transform:uppercase;box-shadow:inset 0 1px rgba(255,255,255,.12);transition:.2s ease}.stream-links a:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .countdown-wrap{margin-top:28px;padding-top:24px;border-top:1px solid var(--line-soft)}.countdown-label{font-size:.78rem;letter-spacing:.17em;text-transform:uppercase;color:var(--gold-2);margin-bottom:12px}.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.count-box{min-height:108px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(255,216,167,.08),rgba(34,21,16,.72));display:grid;place-items:center;text-align:center;padding:10px}.count-box strong{display:block;font-family:"Cinzel",serif;font-size:clamp(2rem,4vw,3rem);color:var(--gold-2)}.count-box span{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}.release-note{margin-top:14px;color:#e9d6bf;line-height:1.7}
+    section{padding:88px 0;position:relative;z-index:1}.section-head{display:grid;grid-template-columns:.65fr 1.35fr;gap:26px;align-items:end;margin-bottom:28px}.section-kicker{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2)} h2{font-size:clamp(2.4rem,5vw,4.2rem);line-height:1}.section-note{max-width:650px;color:var(--muted);line-height:1.8}
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{border:1px solid var(--line);border-radius:26px;padding:26px;background:linear-gradient(180deg,rgba(49,30,23,.72),rgba(18,11,8,.92));box-shadow:var(--shadow)}.panel h3{font-size:1.35rem;color:var(--gold-2);margin-bottom:12px}.panel p{margin:0;color:var(--muted);line-height:1.8}
+    .era-list{display:grid;gap:14px}.era-card{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:18px 20px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01))}.era-year{font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-2);padding-top:4px}.era-card h3{font-size:1.35rem;margin-bottom:6px;color:#fff0db}.era-card p{margin:0;color:var(--muted);line-height:1.7}
+    .footer{padding:30px 0 54px;border-top:1px solid var(--line-soft);color:#c9ac87}.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.85rem}
+    @media (max-width:940px){.hero-grid,.section-head,.feature-grid{grid-template-columns:1fr}.hero{padding-top:34px}}
+    @media (max-width:640px){.wrap{width:min(var(--max),calc(100% - 24px))}.nav-inner{min-height:64px;align-items:flex-start;padding:14px 0}.nav-links{justify-content:flex-end}.countdown{grid-template-columns:repeat(2,1fr)}.era-card{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <div class="utility" aria-hidden="true"><div class="utility-track">BIJOU NICOLE ONLINE // OTHERSELF 09.25.26 // OFFICIAL SITE // MUSIC + VISUALS + TOUR // BIJOU NICOLE ONLINE // OTHERSELF 09.25.26 // OFFICIAL SITE // MUSIC + VISUALS + TOUR //</div></div>
-
-  <nav class="nav" aria-label="Primary navigation">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#top">Bijou Nicole</a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
-      <div class="nav-links" id="navLinks">
-        <a href="#otherSelf">OtherSelf</a>
-        <a href="#eras">Eras</a>
-        <a href="#visuals">Visuals</a>
-        <a href="#about">Bio</a>
-        <a href="#tour">Tour</a>
-      </div>
-    </div>
-  </nav>
-
-  <main id="main">
-    <header class="hero" id="top">
-      <div class="wrap hero-grid">
-        <div>
-          <div class="mini-label">official online destination // 2026</div>
-          <h1 class="chrome-title">Bijou <span>Nicole</span></h1>
-          <p class="hero-copy">welcome to bijou’s digital world — a glossy little time capsule where early-2000s r&b web energy meets <strong>OTHERSELF</strong>, her next chapter in identity, love, confidence and transformation.</p>
-          <div class="hero-actions">
-            <a class="y2k-btn" href="#otherSelf">enter otherself</a>
-            <a class="y2k-btn alt" href="https://music.apple.com/us/artist/bijou-nicole/1742080651" target="_blank" rel="noreferrer">listen now</a>
-          </div>
+  <div class="topbar"><div class="wrap topbar-inner">Bijou Nicole · OTHERSELF EP · Countdown Live · September 25, 2026</div></div>
+  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="#top">Bijou Nicole</a><div class="nav-links"><a href="#otherself">OTHERSELF</a><a href="#listen">Listen</a><a href="#eras">Eras</a></div></div></nav>
+  <main id="top">
+    <header class="hero"><div class="wrap hero-grid">
+      <div class="cover-frame"><img src="otherself-cover.svg" alt="Bijou Nicole OTHERSELF EP cover art" /></div>
+      <div class="hero-card" id="otherself">
+        <div class="eyebrow">official website · new era</div>
+        <h1>OTHERSELF</h1>
+        <p class="subhead">A warm, rich, intimate era rooted in love, reflection, transformation, and every version of self that shows up along the way.</p>
+        <div class="stream-links" id="listen">
+          <a href="https://music.apple.com/us/artist/bijou-nicole/1742080651" target="_blank" rel="noreferrer">Apple Music</a>
+          <a href="https://open.spotify.com/search/Bijou%20Nicole" target="_blank" rel="noreferrer">Spotify</a>
+          <a href="https://music.youtube.com/search?q=Bijou+Nicole" target="_blank" rel="noreferrer">YouTube Music</a>
+          <a href="https://www.youtube.com/results?search_query=Bijou+Nicole" target="_blank" rel="noreferrer">YouTube</a>
         </div>
-
-        <div class="desktop-card" aria-label="OTHERSELF player panel">
-          <div class="window-bar"><span>now_playing.exe</span><span class="win-controls" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="window-body">
-            <div class="disc-wrap">
-              <div class="disc" aria-hidden="true"></div>
-              <div>
-                <div class="player-title">Bijou Nicole — OTHERSELF</div>
-                <div class="player-sub">new era // pop + r&b + identity</div>
-                <div class="meter" aria-hidden="true"><span></span></div>
-                <div class="player-meta"><span>09.25.26</span><span>stereo</span></div>
-                <a class="y2k-btn launch" href="https://music.apple.com/us/artist/bijou-nicole/1742080651" target="_blank" rel="noreferrer">open music</a>
-              </div>
-            </div>
+        <div class="countdown-wrap">
+          <div class="countdown-label">countdown to the OTHERSELF EP</div>
+          <div class="countdown" id="countdown">
+            <div class="count-box"><div><strong id="days">00</strong><span>Days</span></div></div>
+            <div class="count-box"><div><strong id="hours">00</strong><span>Hours</span></div></div>
+            <div class="count-box"><div><strong id="minutes">00</strong><span>Minutes</span></div></div>
+            <div class="count-box"><div><strong id="seconds">00</strong><span>Seconds</span></div></div>
           </div>
+          <div class="release-note" id="releaseNote">Counting down to <strong>September 25, 2026</strong>. Save the date and follow Bijou everywhere now.</div>
         </div>
       </div>
-    </header>
+    </div></header>
 
-    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>✦ OTHERSELF</span><span>SEPTEMBER 25 2026</span><span>R&B // POP // SELF-DISCOVERY</span><span>✦ BIJOU NICOLE</span><span>NEW ERA LOADING...</span><span>✦ OTHERSELF</span><span>SEPTEMBER 25 2026</span><span>R&B // POP // SELF-DISCOVERY</span><span>✦ BIJOU NICOLE</span><span>NEW ERA LOADING...</span></div></div>
+    <section><div class="wrap"><div class="section-head"><div class="section-kicker">the new chapter</div><div><h2>OTHERSELF</h2><p class="section-note">Bronze glow, soft gold typography, deep espresso tones and a cleaner R&amp;B editorial layout built around the EP artwork.</p></div></div><div class="feature-grid"><div class="panel"><h3>Listen now</h3><p>Fans can jump straight to Bijou’s existing catalog on Apple Music, Spotify and YouTube while the countdown runs.</p></div><div class="panel"><h3>Coming next</h3><p>We can add the final tracklist, teaser visuals, lyric highlights, credits, press quotes and direct OTHERSELF links when they are available.</p></div></div></div></section>
 
-    <section id="otherSelf">
-      <div class="wrap">
-        <div class="section-top">
-          <div><div class="tiny">current era // 12th chapter</div><h2>OTHERSELF</h2></div>
-          <p>a more playful, chrome-coated chapter: different versions of the self, love that changes you, and that weird little space between who you were and who you’re becoming.</p>
-        </div>
-
-        <div class="current-grid">
-          <div class="feature-window">
-            <div class="window-bar"><span>otherself_main.html</span><span class="win-controls" aria-hidden="true"><i></i><i></i><i></i></span></div>
-            <div class="feature-body">
-              <div class="tiny">new era // bijou nicole</div>
-              <h3>meet your other self.</h3>
-              <p>OTHERSELF brings the emotional storytelling of Bijou’s catalog into a shinier, more kinetic world — pop edges, r&b heart, nostalgic textures, and a little bit of digital fantasy.</p>
-              <span class="release-date">release // september 25, 2026</span>
-            </div>
-          </div>
-
-          <aside class="info-window">
-            <div class="window-bar"><span>era_status.ini</span><span class="win-controls" aria-hidden="true"><i></i><i></i><i></i></span></div>
-            <div class="info-body">
-              <div class="stat"><b>status</b><span>OTHERSELF era active ✦</span></div>
-              <div class="stat"><b>sonic world</b><span>r&b · pop · hyper-digital accents · 2000s nostalgia</span></div>
-              <div class="stat"><b>visual language</b><span>chrome · lilac · black · jewel tones · glossy web graphics</span></div>
-              <div class="stat"><b>era meter</b><div class="sparkline" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section id="eras">
-      <div class="wrap">
-        <div class="section-top">
-          <div><div class="tiny">discography.zip</div><h2>era archive</h2></div>
-          <p>the catalog, organized like an old-school desktop archive. switch years to jump through Bijou’s public release eras.</p>
-        </div>
-
-        <div class="archive-window">
-          <div class="window-bar"><span>c:\bijou\music\eras</span><span class="win-controls" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="archive-shell">
-            <div class="archive-tabs" role="tablist" aria-label="Era years">
-              <button class="active" data-year="2024" role="tab">2024</button>
-              <button data-year="2025" role="tab">2025</button>
-              <button data-year="2026" role="tab">2026</button>
-            </div>
-            <div class="archive-content" id="archiveContent" aria-live="polite"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="visuals">
-      <div class="wrap">
-        <div class="section-top">
-          <div><div class="tiny">media gallery</div><h2>visual archive</h2></div>
-          <p>built to hold official era photos, music-video stills, tour shots and press images. these panels are ready for Bijou’s real visual assets next.</p>
-        </div>
-        <div class="visual-window">
-          <div class="window-bar"><span>gallery_folder</span><span class="win-controls" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="visual-grid">
-            <div class="visual-card"><b>OTHERSELF // portraits</b><span>official era photography slot</span></div>
-            <div class="visual-card"><b>music // motion</b><span>video stills + performance visuals</span></div>
-            <div class="visual-card"><b>tour // backstage</b><span>live moments + behind the scenes</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="wrap">
-        <div class="section-top">
-          <div><div class="tiny">artist_profile.txt</div><h2>about bijou</h2></div>
-          <p>the bio section gets an old internet-profile feel without making people hunt for the actual information.</p>
-        </div>
-        <div class="archive-window">
-          <div class="window-bar"><span>bijou_nicole.profile</span><span class="win-controls" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="profile-grid">
-            <div class="avatar"><span>official photo coming next</span></div>
-            <div class="profile">
-              <div class="tiny">singer // songwriter // visual artist</div>
-              <h3>every era is another room in the daydream.</h3>
-              <p>Bijou Nicole builds r&b and pop worlds around emotion, identity and cinematic storytelling. Her catalog moves between tenderness, self-worth, complicated romance and transformation — each project carrying its own visual language while still belonging to the same larger story.</p>
-              <div class="profile-table">
-                <div class="row"><b>current era</b><span>OTHERSELF</span></div>
-                <div class="row"><b>latest album</b><span>The Life of a Daydreamer</span></div>
-                <div class="row"><b>sound</b><span>R&B · pop · alt-R&B · experimental textures</span></div>
-                <div class="row"><b>listen</b><span><a href="https://music.apple.com/us/artist/bijou-nicole/1742080651" target="_blank" rel="noreferrer">Apple Music ↗</a></span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="tour">
-      <div class="wrap">
-        <div class="section-top">
-          <div><div class="tiny">live_dates.xls</div><h2>daydreamer tour</h2></div>
-          <p>a cleaner version of the classic early-2000s tour board — easy to scan on desktop and phone.</p>
-        </div>
-        <div class="tour-window">
-          <div class="window-bar"><span>the_life_of_a_daydreamer_world_tour</span><span class="win-controls" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="tour-body">
-            <div class="tour-row"><time>North America</time><strong>Atlanta · Miami · DC · NYC · Boston · Chicago</strong><span>World Tour</span><em>Tour era</em></div>
-            <div class="tour-row"><time>Canada</time><strong>Toronto · Montréal</strong><span>World Tour</span><em>Tour era</em></div>
-            <div class="tour-row"><time>Europe</time><strong>London · Paris · Amsterdam · Berlin · Cologne · Milan · Madrid</strong><span>World Tour</span><em>Tour era</em></div>
-            <div class="tour-row"><time>Global</time><strong>Dubai · Johannesburg · Nairobi</strong><span>World Tour</span><em>Tour era</em></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <div class="contact-window">
-          <div class="window-bar"><span>contact_us.msg</span><span class="win-controls" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="contact-body">
-            <div class="tiny">press // booking // partnerships</div>
-            <h2>connect with the world of bijou.</h2>
-            <p>this space is ready for the official management, booking and press contacts when you want to add them.</p>
-            <div class="hero-actions" style="justify-content:center"><a class="y2k-btn" href="https://music.apple.com/us/artist/bijou-nicole/1742080651" target="_blank" rel="noreferrer">listen to bijou</a></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section id="eras"><div class="wrap"><div class="section-head"><div class="section-kicker">discography</div><div><h2>the eras</h2><p class="section-note">Bijou’s catalog stays visible beneath the current era so new listeners can move backward through the story.</p></div></div><div class="era-list">
+      <article class="era-card"><div class="era-year">2024</div><div><h3>Hopelessly Devoted</h3><p>The vulnerable beginnings — romantic, earnest and emotionally direct.</p></div></article>
+      <article class="era-card"><div class="era-year">2024</div><div><h3>Golden Days</h3><p>A healing era rooted in warmth, self-worth and early signature songwriting.</p></div></article>
+      <article class="era-card"><div class="era-year">2024</div><div><h3>Jingle Bell Love</h3><p>Holiday softness, nostalgia and classic R&amp;B sweetness.</p></div></article>
+      <article class="era-card"><div class="era-year">2025</div><div><h3>No Man’s Land</h3><p>More grown, more conflicted, and emotionally layered.</p></div></article>
+      <article class="era-card"><div class="era-year">2025</div><div><h3>Twisted Hearts in Tangled Lines</h3><p>Messy love, tension, romance and complication.</p></div></article>
+      <article class="era-card"><div class="era-year">2025</div><div><h3>always starts with u · XO · Floor It</h3><p>A stretch of intimacy, holiday romance and bigger confidence leading into the next phase.</p></div></article>
+      <article class="era-card"><div class="era-year">2026</div><div><h3>555 · HEARTSPELL · The Life of a Daydreamer</h3><p>The cinematic rise — expanding the world, the visuals, and the emotional universe.</p></div></article>
+      <article class="era-card"><div class="era-year">2026</div><div><h3>OTHERSELF</h3><p>The newest chapter — identity, love, transformation and the different versions of self we carry.</p></div></article>
+    </div></div></section>
   </main>
-
-  <footer>
-    <div class="wrap footer-grid">
-      <span>© 2026 Bijou Nicole // best viewed with headphones ✦ <span class="counter">000555</span></span>
-      <div class="footer-links"><a href="#top">top</a><a href="#eras">archive</a><a href="#tour">tour</a><a href="https://music.apple.com/us/artist/bijou-nicole/1742080651" target="_blank" rel="noreferrer">apple music</a></div>
-    </div>
-  </footer>
-
+  <footer class="footer"><div class="wrap footer-inner"><div>© 2026 Bijou Nicole · OTHERSELF era</div><div>Official website experience</div></div></footer>
   <script>
-    const menuBtn=document.getElementById('menuBtn');
-    const navLinks=document.getElementById('navLinks');
-    menuBtn.addEventListener('click',()=>{
-      const open=navLinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded',String(open));
-    });
-    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-      navLinks.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded','false');
-    }));
-
-    const eras={
-      '2024':[
-        ['Hopelessly Devoted','the early r&b chapter — vulnerable, romantic and emotionally direct.'],
-        ['Golden Days','a warmer, reflective era centered on healing, memory and self-worth.'],
-        ['Jingle Bell Love','holiday r&b wrapped in romance, nostalgia and winter glow.']
-      ],
-      '2025':[
-        ["No Man’s Land",'a more conflicted and emotionally complicated phase of the catalog.'],
-        ['Twisted Hearts in Tangled Lines','messy love, tension and the places where romance gets complicated.'],
-        ['always starts with u','a softer chapter about devotion, memory and returning to someone.'],
-        ['XO: A Holiday Love Letter','glossy seasonal r&b with a romantic center.'],
-        ['Floor It','a bolder, faster transition into a more confident and kinetic sound.']
-      ],
-      '2026':[
-        ['555 · The Jewelettes','a group chapter and a new-world reset.'],
-        ['HEARTSPELL','romance, fantasy and the pull of emotional obsession.'],
-        ['The Life of a Daydreamer','Bijou’s cinematic album world — imagination, survival and becoming.'],
-        ['OTHERSELF','the current chapter: transformation, identity, pop-r&b energy and self-discovery.']
-      ]
-    };
-
-    const archiveContent=document.getElementById('archiveContent');
-    const tabs=[...document.querySelectorAll('.archive-tabs button')];
-    function renderYear(year){
-      archiveContent.innerHTML=`<div class="archive-year">folder // ${year}</div><div class="era-list">${eras[year].map((e,i)=>`<article class="era-item ${e[0]==='OTHERSELF'?'current':''}"><div class="era-num">${String(i+1).padStart(2,'0')}</div><div><h3>${e[0]}</h3><p>${e[1]}</p></div></article>`).join('')}</div>`;
-      tabs.forEach(t=>t.classList.toggle('active',t.dataset.year===year));
-    }
-    tabs.forEach(t=>t.addEventListener('click',()=>renderYear(t.dataset.year)));
-    renderYear('2026');
-
-    const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(!reduce && window.matchMedia('(pointer:fine)').matches){
-      let last=0;
-      window.addEventListener('pointermove',e=>{
-        const now=performance.now(); if(now-last<70)return; last=now;
-        const s=document.createElement('i');s.className='spark';s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),720);
-      });
-    }
+    const targetDate=new Date('2026-09-25T00:00:00-04:00').getTime();
+    const ids={days:document.getElementById('days'),hours:document.getElementById('hours'),minutes:document.getElementById('minutes'),seconds:document.getElementById('seconds'),note:document.getElementById('releaseNote')};
+    const pad=n=>String(n).padStart(2,'0');
+    function updateCountdown(){const diff=targetDate-Date.now();if(diff<=0){ids.days.textContent='00';ids.hours.textContent='00';ids.minutes.textContent='00';ids.seconds.textContent='00';ids.note.innerHTML='<strong>OTHERSELF is out now.</strong> Stream Bijou Nicole on your favorite platform.';return;}ids.days.textContent=pad(Math.floor(diff/(1000*60*60*24)));ids.hours.textContent=pad(Math.floor((diff/(1000*60*60))%24));ids.minutes.textContent=pad(Math.floor((diff/(1000*60))%60));ids.seconds.textContent=pad(Math.floor((diff/1000)%60));}
+    updateCountdown();setInterval(updateCountdown,1000);
   </script>
 </body>
 </html>
