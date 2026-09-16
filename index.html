@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b0710" />
+  <meta name="description" content="Bijou Nicole — singer, songwriter and visual artist. Enter the world of The Life of a Daydreamer and the next chapter, SOUL TIES." />
+  <title>Bijou Nicole — Official Site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0710;
+      --bg-soft: #140d1b;
+      --panel: rgba(255,255,255,.055);
+      --line: rgba(255,255,255,.12);
+      --text: #fbf7ff;
+      --muted: #bcb0c7;
+      --rose: #d7a4c5;
+      --lavender: #9c87bf;
+      --cream: #f2e7d7;
+      --max: 1180px;
+      --shadow: 0 30px 80px rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% 12%, rgba(156,135,191,.16), transparent 30%),
+        radial-gradient(circle at 82% 22%, rgba(215,164,197,.12), transparent 32%),
+        linear-gradient(180deg, #0b0710 0%, #100b15 48%, #08060c 100%);
+      font-family: "DM Sans", system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+      z-index: 999;
+      mix-blend-mode: soft-light;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(var(--max), calc(100% - 38px)); margin: 0 auto; }
+
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      border-bottom: 1px solid transparent;
+      transition: .3s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(8,6,12,.82);
+      backdrop-filter: blur(18px);
+      border-color: var(--line);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      font-family: "Italiana", serif;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: 1.05rem;
+      white-space: nowrap;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links a { color: #dfd5e6; font-size: .82rem; text-transform: uppercase; letter-spacing: .12em; }
+    .nav-links a:hover { color: white; }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font: inherit;
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      padding: 160px 0 78px;
+    }
+
+    .orb {
+      position: absolute;
+      width: min(58vw, 720px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      top: 8%;
+      right: -10%;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,.42), rgba(215,164,197,.23) 16%, rgba(156,135,191,.13) 42%, rgba(17,9,25,.05) 66%, transparent 72%);
+      filter: blur(2px);
+      opacity: .75;
+      box-shadow: 0 0 120px rgba(156,135,191,.16);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.45fr .55fr;
+      align-items: end;
+      gap: 50px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .78rem;
+      color: var(--rose);
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before { content:""; width: 34px; height: 1px; background: currentColor; }
+
+    h1, h2, h3 { margin: 0; font-family: "Italiana", serif; font-weight: 400; }
+    h1 { font-size: clamp(4.2rem, 12vw, 10.5rem); line-height: .82; letter-spacing: -.035em; max-width: 940px; }
+    h1 span { display: block; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.58); transform: translateX(.48em); }
+
+    .hero-copy {
+      color: var(--muted);
+      max-width: 430px;
+      line-height: 1.8;
+      font-size: .98rem;
+      padding-bottom: 10px;
+    }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      font-size: .73rem;
+      letter-spacing: .13em;
+      border: 1px solid rgba(255,255,255,.22);
+      transition: .25s ease;
+      cursor: pointer;
+    }
+    .btn.primary { background: var(--cream); color: #160f19; border-color: var(--cream); }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.2); }
+
+    section { padding: 110px 0; position: relative; }
+    .section-head { display: grid; grid-template-columns: .75fr 1.25fr; gap: 40px; margin-bottom: 54px; align-items: end; }
+    .kicker { color: var(--rose); text-transform: uppercase; letter-spacing: .18em; font-size: .76rem; }
+    h2 { font-size: clamp(3rem, 7vw, 6rem); line-height: .92; }
+    .section-note { color: var(--muted); max-width: 530px; line-height: 1.8; }
+
+    .era-card {
+      min-height: 620px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(140deg, rgba(246,223,237,.06), rgba(93,66,118,.08)),
+        radial-gradient(circle at 28% 28%, rgba(215,164,197,.2), transparent 26%),
+        radial-gradient(circle at 72% 58%, rgba(120,84,153,.2), transparent 34%),
+        #100a16;
+      box-shadow: var(--shadow);
+      display: grid;
+      align-items: end;
+    }
+
+    .era-card::after {
+      content: "SOUL TIES";
+      position: absolute;
+      top: 7%;
+      right: -1%;
+      font-family: "Italiana", serif;
+      font-size: clamp(4.6rem, 14vw, 13rem);
+      line-height: .8;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,.12);
+      transform: rotate(-7deg);
+      white-space: nowrap;
+    }
+
+    .era-copy { position: relative; z-index: 2; padding: clamp(28px, 5vw, 64px); max-width: 700px; }
+    .era-copy h3 { font-size: clamp(3.4rem, 8vw, 7rem); line-height: .88; margin: 8px 0 24px; }
+    .era-copy p { color: #d3c7da; max-width: 580px; line-height: 1.85; }
+
+    .music-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .release {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      background: var(--panel);
+      transition: .25s ease;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .release:hover { transform: translateY(-5px); background: rgba(255,255,255,.075); }
+    .art {
+      aspect-ratio: 1;
+      border-radius: 18px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(255,255,255,.12);
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.28), transparent 16%), linear-gradient(145deg,#402f4f,#160f1d 48%,#08060b);
+    }
+    .art.two { background: radial-gradient(circle at 68% 33%, rgba(255,240,225,.28), transparent 14%), linear-gradient(145deg,#8b687e,#2a1727 46%,#0b0710); }
+    .art.three { background: radial-gradient(circle at 48% 30%, rgba(255,255,255,.18), transparent 12%), linear-gradient(145deg,#251a35,#5e496d 50%,#100b17); }
+    .art::before { content:"BN"; position:absolute; inset:auto 18px 14px auto; font-family:"Italiana",serif; font-size:3.3rem; color:rgba(255,255,255,.25); }
+    .release small { color: var(--rose); text-transform: uppercase; letter-spacing: .14em; }
+    .release h3 { font-size: 2rem; margin-top: 8px; }
+    .release p { color: var(--muted); line-height: 1.6; font-size: .9rem; }
+
+    .story-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 28px; align-items: stretch; }
+    .portrait-placeholder {
+      min-height: 560px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 50% 30%, rgba(244,218,233,.2), transparent 18%),
+        linear-gradient(170deg,#23162c,#0d0912 72%);
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .portrait-placeholder span { color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .2em; font-size: .72rem; }
+    .portrait-placeholder::after { content:"BIJOU"; position:absolute; bottom:-.13em; left:-.03em; font-family:"Italiana",serif; font-size:clamp(6rem,14vw,11rem); color:rgba(255,255,255,.04); }
+
+    .story-card { border-radius: 28px; border: 1px solid var(--line); background: var(--panel); padding: clamp(30px, 5vw, 62px); display:flex; flex-direction:column; justify-content:center; }
+    .story-card h3 { font-size: clamp(2.8rem, 5vw, 4.8rem); line-height: .95; margin: 12px 0 26px; }
+    .story-card p { color: var(--muted); line-height: 1.9; max-width: 650px; }
+
+    .tour-list { border-top: 1px solid var(--line); }
+    .tour-row { display:grid; grid-template-columns: 1.2fr .8fr auto; gap:24px; align-items:center; padding:22px 0; border-bottom:1px solid var(--line); }
+    .tour-row strong { font-family:"Italiana",serif; font-size:1.5rem; font-weight:400; }
+    .tour-row span { color:var(--muted); }
+    .tour-row em { font-style:normal; color:var(--rose); text-transform:uppercase; letter-spacing:.11em; font-size:.72rem; }
+
+    .contact {
+      padding-bottom: 150px;
+    }
+    .contact-box {
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: clamp(34px, 6vw, 76px);
+      text-align: center;
+      background: linear-gradient(140deg, rgba(215,164,197,.09), rgba(156,135,191,.05));
+    }
+    .contact-box h2 { max-width: 850px; margin: 0 auto 24px; }
+    .contact-box p { color: var(--muted); max-width: 620px; margin: 0 auto; line-height: 1.8; }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0 34px; color: #9d92a6; font-size: .8rem; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; }
+    .socials { display:flex; gap:18px; flex-wrap:wrap; }
+    .socials button { background:none; border:0; padding:0; color:#cfc4d6; font:inherit; cursor:pointer; }
+    .socials button:hover { color:white; }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 28px;
+      transform: translate(-50%, 20px);
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: #f2e7d7;
+      color: #160f19;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s ease;
+      z-index: 1000;
+      font-size: .86rem;
+    }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+    @media (max-width: 900px) {
+      .menu-btn { display:block; }
+      .nav-links {
+        position:absolute;
+        top:76px;
+        left:19px;
+        right:19px;
+        padding:20px;
+        border:1px solid var(--line);
+        border-radius:22px;
+        background:rgba(10,7,14,.95);
+        backdrop-filter:blur(18px);
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .nav-links.open { display:flex; }
+      .hero-grid, .section-head, .story-grid { grid-template-columns:1fr; }
+      .hero-copy { margin-left:auto; }
+      .music-grid { grid-template-columns:1fr; }
+      .release { min-height: unset; }
+      .tour-row { grid-template-columns:1fr auto; }
+      .tour-row span { grid-column:1 / -1; grid-row:2; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width:min(var(--max), calc(100% - 24px)); }
+      section { padding:78px 0; }
+      .hero { padding-bottom:46px; }
+      h1 { font-size:clamp(3.7rem,20vw,6.2rem); }
+      h1 span { transform:none; }
+      .era-card { min-height:540px; }
+      .tour-row { grid-template-columns:1fr; }
+      .tour-row span, .tour-row em { grid-column:auto; grid-row:auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="toast" id="toast">official link coming soon ✦</div>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Bijou Nicole</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">Menu</button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#era">Era</a>
+        <a href="#music">Music</a>
+        <a href="#story">Story</a>
+        <a href="#tour">Tour</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="orb" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Singer • songwriter • world-builder</div>
+          <h1>Bijou <span>Nicole</span></h1>
+        </div>
+        <div class="hero-copy">
+          A dream-state of alt-R&amp;B, pop, intimacy and cinematic storytelling. Step inside the world of Bijou Nicole — where every era feels like a memory you almost lived.
+          <div class="actions">
+            <a class="btn primary" href="#music">Enter the music</a>
+            <a class="btn" href="#tour">World tour</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="era">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">The next chapter</div>
+          <div>
+            <h2>SOUL TIES</h2>
+            <p class="section-note">A new Bijou Nicole project exploring chemistry, memory, attachment and the strange gravity that keeps pulling two people back toward each other.</p>
+          </div>
+        </div>
+        <article class="era-card">
+          <div class="era-copy">
+            <div class="kicker">New era • in development</div>
+            <h3>Love leaves a frequency.</h3>
+            <p>Soft vocals, late-night drums, warm low end and diary-like writing meet a more fluid, intimate visual world. SOUL TIES is being built as a full experience — not just a collection of songs.</p>
+            <div class="actions">
+              <a class="btn primary" href="#music">Explore the catalog</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="music">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Selected releases</div>
+          <div>
+            <h2>Music that lives after midnight.</h2>
+            <p class="section-note">From the dream-pop architecture of <em>The Life of a Daydreamer</em> to intimate alt-R&amp;B experiments, Bijou's catalog moves between spectacle and confession.</p>
+          </div>
+        </div>
+
+        <div class="music-grid">
+          <article class="release">
+            <div>
+              <div class="art"></div>
+              <small>Album • 2026</small>
+              <h3>The Life of a Daydreamer</h3>
+            </div>
+            <p>A cinematic pop/R&amp;B world built around fantasy, survival and becoming.</p>
+          </article>
+
+          <article class="release">
+            <div>
+              <div class="art two"></div>
+              <small>EP</small>
+              <h3>b.</h3>
+            </div>
+            <p>An alt-R&amp;B chapter centered on finding love again without losing yourself.</p>
+          </article>
+
+          <article class="release">
+            <div>
+              <div class="art three"></div>
+              <small>Upcoming era</small>
+              <h3>SOUL TIES</h3>
+            </div>
+            <p>Intimate, atmospheric and emotionally tangled — the next world is taking shape.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="wrap story-grid">
+        <div class="portrait-placeholder" aria-label="Bijou Nicole image placeholder">
+          <span>official portrait coming soon</span>
+        </div>
+        <article class="story-card">
+          <div class="kicker">About Bijou</div>
+          <h3>Soft edges. Big worlds.</h3>
+          <p>Bijou Nicole is an AI music artist developed as a fully realized creative universe — singer, songwriter, performer and visual storyteller. Her work blends R&amp;B, pop and cinematic world-building with an evolving digital identity.</p>
+          <p>Presented through Wolfpark Recordings under Prism Nine Entertainment, Bijou's releases connect music, imagery, performance concepts and narrative into one continuous story.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="tour">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="kicker">Live world</div>
+          <div>
+            <h2>Daydreamer World Tour</h2>
+            <p class="section-note">Selected cities from Bijou's current touring universe. Full venue and ticket information will be added as official links are finalized.</p>
+          </div>
+        </div>
+
+        <div class="tour-list">
+          <div class="tour-row"><strong>New York</strong><span>United States</span><em>North America</em></div>
+          <div class="tour-row"><strong>Toronto</strong><span>Canada</span><em>North America</em></div>
+          <div class="tour-row"><strong>London</strong><span>United Kingdom</span><em>Europe</em></div>
+          <div class="tour-row"><strong>Paris</strong><span>France</span><em>Europe</em></div>
+          <div class="tour-row"><strong>Berlin</strong><span>Germany</span><em>Europe</em></div>
+          <div class="tour-row"><strong>Dubai</strong><span>United Arab Emirates</span><em>Middle East</em></div>
+          <div class="tour-row"><strong>Johannesburg</strong><span>South Africa</span><em>Africa</em></div>
+          <div class="tour-row"><strong>Nairobi</strong><span>Kenya</span><em>Africa</em></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div class="kicker">Press • bookings • partnerships</div>
+          <h2>Step into Bijou's world.</h2>
+          <p>Management, booking and press contact information will live here. For now, this space is ready for the official inquiry email and media-kit link.</p>
+          <div class="actions" style="justify-content:center">
+            <button class="btn primary placeholder-link" type="button">Contact Bijou</button>
+            <button class="btn placeholder-link" type="button">Press kit</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div>© <span id="year"></span> Bijou Nicole • Wolfpark Recordings / Prism Nine Entertainment</div>
+      <div class="socials" aria-label="Social links">
+        <button class="placeholder-link" type="button">Instagram</button>
+        <button class="placeholder-link" type="button">TikTok</button>
+        <button class="placeholder-link" type="button">YouTube</button>
+        <button class="placeholder-link" type="button">Spotify</button>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const toast = document.getElementById('toast');
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 18);
+    });
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    document.querySelectorAll('.placeholder-link').forEach(button => {
+      button.addEventListener('click', () => {
+        toast.classList.add('show');
+        clearTimeout(window.__bijouToast);
+        window.__bijouToast = setTimeout(() => toast.classList.remove('show'), 1800);
+      });
+    });
+  </script>
+</body>
+</html>
